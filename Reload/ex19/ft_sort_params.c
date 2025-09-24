@@ -1,36 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/24 13:23:58 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/24 15:51:11 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/09/24 19:21:43 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/09/24 19:30:20 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int	ft_sqrt(int nb)
+int	main(int argc, char **argv)
 {
-	int	res;
 
-	res = 0;
-	while (res <= nb)
-	{
-		if ((res * res) == nb)
-			return (res);
-		else
-		{
-			res++;
-		}
-	}
-	return (0);
+
 }
-/*int	main()
-{
-	int	nb = 6;
-	
-	printf("%d\n",ft_sqrt(nb));
-	return (0);
-}*/

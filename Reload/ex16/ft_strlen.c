@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/24 13:23:58 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/24 15:51:11 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/09/24 17:10:11 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/09/24 17:13:00 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int	ft_sqrt(int nb)
+int	ft_strlen(char *str)
 {
-	int	res;
+	int	i;
 
-	res = 0;
-	while (res <= nb)
-	{
-		if ((res * res) == nb)
-			return (res);
-		else
-		{
-			res++;
-		}
-	}
-	return (0);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
-/*int	main()
-{
-	int	nb = 6;
-	
-	printf("%d\n",ft_sqrt(nb));
-	return (0);
-}*/

@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/24 13:23:58 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/24 15:51:11 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/09/24 15:55:43 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/09/24 16:11:47 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int	ft_sqrt(int nb)
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
-	int	res;
+	int	i;
 
-	res = 0;
-	while (res <= nb)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if ((res * res) == nb)
-			return (res);
-		else
-		{
-			res++;
-		}
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (0);
 }
-/*int	main()
-{
-	int	nb = 6;
-	
-	printf("%d\n",ft_sqrt(nb));
-	return (0);
-}*/
