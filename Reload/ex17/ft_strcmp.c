@@ -6,16 +6,16 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:14:08 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/24 18:32:51 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/09/28 18:47:58 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
 	while ((s1[i] == s2[i]) && (s1[i] && s2[i]))
-		i++
-	return((unsigned) s1[i] - (unsigned) s2[i])
+		i++;
+	return ((unsigned) s1[i] - (unsigned) s2[i]);
 }

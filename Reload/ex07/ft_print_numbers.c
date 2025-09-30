@@ -6,18 +6,19 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 22:08:38 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/08 22:21:00 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/09/28 21:11:01 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
 	char	n;
 
-	n = '1';
-	while (n <= 9)
+	n = '0';
+	while (n <= '9')
 	{
-		ft_putchar(n)
-		n = n + 1;
+		ft_putchar(n);
+		n++;
 	}
 }

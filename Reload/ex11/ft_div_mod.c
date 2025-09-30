@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 10:58:17 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/23 11:18:05 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/09/28 19:00:46 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 void	ft_div_mod(int a, int b, int *div, int *mod)

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/08 22:42:13 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/28 19:03:05 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/09/24 19:03:51 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/09/28 18:54:21 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 void	ft_putchar(char c);
 
-void	ft_is_negative(int n)
+int	main(int argc, char **argv)
 {
-	if (n < 0)
-		ft_putchar('N');
-	else
-		ft_putchar('P');
+	int	a;
+	int	b;
+
+	a = 1;
+	while (a < argc)
+	{
+		b = 0;
+		while (argv[a][b] != '\0')
+		{
+			ft_putchar(argv[a][b]);
+			b++;
+		}
+		ft_putchar('\n');
+		a++;
+	}
+	return (0);
 }

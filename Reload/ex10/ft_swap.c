@@ -6,18 +6,18 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 19:54:03 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/23 10:48:24 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/09/28 19:34:21 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
 void	ft_swap(int *a, int *b)
 {
-	int	*temp;
+	int	temp;
 
-	temp = a;
-	a = b;
-	b = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 /*int	main()
 {

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prrint_params.c                                 :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/24 19:03:51 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/24 19:17:05 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/09/26 11:11:31 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/09/28 19:26:48 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdio.h>
+#include <stdlib.h>
 
-int	main (int argc, char **argv)
+int	*ft_range(int min, int max)
 {
-	int a;
-	int b;
-	
-	a = 1;
-	while (a < argc)
-	{
-		b = 0;
-		while ( argv[a][b] != '\0')
-			{
-				ft_putchar(argv[a][b];
-				b++;
-			}
-		ft_putchar('\n');
-		a++;
-	}
-	return(0);
+	int		i;
+	int		*range;
+	int		len;
 
+	if (min >= max)
+		return (NULL);
+	len = max - min;
+	range = (int *) malloc(len * sizeof(int));
+	if (!range)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		range[i] = min + i;
+		i++;
+	}
+	return (range);
 }
