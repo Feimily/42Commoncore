@@ -1,0 +1,15 @@
+.PHONY : all fclean clean re
+
+TARGET := libft.a
+
+all: $(TARGET)
+$(TARGET):
+	cc -o ft_strlcpy.o -c ft_strlcpy.c -Wall -Wextra -Werror -I.
+	ar rcs $(TARGET) ft_strlcpy.o
+
+fclean:
+	rm -f $(TARGET)
+clean:
+	rm -f *.o
+re:
+	true
