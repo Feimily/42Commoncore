@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 13:32:43 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/12 17:52:07 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/10/12 18:18:41 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/10/12 18:27:33 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-    char    *sub;
-    size_t  i;
-    size_t  s_len;
+    size_t len1;
+    size_t len2;
+    char *joined;  
+    size_t i;
 
-    if (!s)
+    if (!s1 || !s2)
         return (NULL);
-    s_len = ft_strlen(s);
-    if (start >= s_len)
-        return (ft_strdup(""));
-    if (len > s_len - start)
-        len = s_len - start;
-    sub = (char *)malloc((len + 1) * sizeof(char));
-    if (!sub)
+    len1 = ft_strlen(s1);
+    len2 = ft_strlen(s2);
+    joined = (char *)malloc(len1 + len2 + 1);
+    if (!joinded)
         return (NULL);
     i = 0;
-    while (i < len && s[start + i])
+    while (i < len1)
     {
-        sub[i] = s[start + i];
+        joined[i] = s1[i];
         i++;
     }
-    sub[i] = '\0';+
-    return (sub);
+    i = 0;
+    while (i < len2)
+    {
+        joined[len1 + i] = s2[i];
+        i++;
+    }
+    joined[len1 + len2] = '\0';
+    return (joined);
 }
