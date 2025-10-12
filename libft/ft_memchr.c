@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 19:48:00 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/08 10:33:32 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/10/08 12:30:48 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/10/08 13:06:50 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
-	size_t srclen;
+	const unsigned char *csrc;
+	size_t				i;
 	
-	if (!dst || !src)
-		return (0);
-	srclen = ft_strlen(src);
-	if (size == 0)
-		return (srclen);
+	if (!s)
+		return (NULL);
+	csrc = (const unsigned char *)s;
 	i = 0;
-	while (src[i] && i < (size - 1))
+	while (i < n)
 	{
-		dst[i] = src[i];
+		if (csrc[i] == (unsigned char)c)
+			return ((void *)&csrc[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (size);
+	return (NULL);
 }
-/*int	main ()
-{
-	char	buf[10] = "hola";
-	ft_strlcpy(buf, "pepe", 4);
-	printf("ft   : %s\n", buf);
-	ft_strlcpy(buf, "pepe", 4);
-	printf("ft   : %s\n", buf);
-}*/
