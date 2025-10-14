@@ -44,7 +44,7 @@ static int  ft_count_set_back(const char *s1, const char *set, size_t len)
     }
     return (res)
 }
-
+static  void ft_strcopy_set(char *s, char *set)
 char    *ft_strtrim(const char *s1, const char *set)
 {
     size_t  i;
@@ -57,7 +57,7 @@ char    *ft_strtrim(const char *s1, const char *set)
     if (setlen >= ft_strlen(s1))
         return NULL
     len = (ft_strlen(s1) - len);
-    ft_calloc(len, sizeof(char))
+    str = ft_calloc(len, sizeof(char))
     i = 0;
     j = 0;
     while (str[i])
