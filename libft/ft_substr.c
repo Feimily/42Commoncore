@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:32:43 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/12 17:52:07 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/17 11:11:50 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
         sub[i] = s[start + i];
         i++;
     }
-    sub[i] = '\0';+
+    sub[i] = '\0';
     return (sub);
 }

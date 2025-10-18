@@ -1,76 +1,61 @@
-static int to_set(const char c, const char *set)
-{
-    size_t j;
+#include "libft.h"
 
-    j = 0;
-        while (set[j])
-        {
-            if (c == set[j])
-                return (1);
-            j++;
-        }
-    
-    return (0)
+static int	to_set(char c, const char *set)
+{
+	size_t	j;
+
+	j = 0;
+	while (set[j])
+	{
+		if (c == set[j])
+			return (1);
+		j++;
+	}
+	return (0);
 }
 
-static int  ft_count_set_front(const char *s1, const char *set)
+static size_t	get_start(const char *s1, const char *set)
 {
-    size_t i;
-    int res;
+	size_t	start;
 
-    i = 0;
-    res = 0;
-    while (s1[i] && to_set(s1[i], set))
-    {
-        res++;
-        i++;
-    }
-    return (res)
+	start = 0;
+    while (s1[start] && to_set(s1[start], set))
+		start++;
+	return (start);
 }
 
-static int  ft_count_set_back(const char *s1, const char *set, size_t len)
+static size_t	get_end(const char *s1, const char *set, size_t start)
 {
-    size_t i;
-    int res;
+	size_t	end;
 
-    i = len - 1;
-    res = 0;
-    if (len == 0)
-        return (0);
-    while (s1[i] && to_set(s1[i], set))
-    {
-        res++;
-        i--;
-    }
-    return (res)
-}
-static  void ft_strcopy_set(char *s, char *set)
-char    *ft_strtrim(const char *s1, const char *set)
-{
-    size_t  i;
-    size_t  j;
-    size_t  len;
-    size_t  setlen;
-    char    *str;
-    
-    setlen = ft_count_set_front(s1, set) + ft_count_set_back(s1, set, ft_strlen(s1))
-    if (setlen >= ft_strlen(s1))
-        return NULL
-    len = (ft_strlen(s1) - len);
-    str = ft_calloc(len, sizeof(char))
-    i = 0;
-    j = 0;
-    while (str[i])
-    {
-        if (to_set(s1[j], set))
-            j++;
-        else
-        {
-            str[i] = s1[j] 
-            i++;
-            j++;
-        }
-    }
-    return (str)
+	end = ft_strlen(s1);
+	while (end > start && to_set(s1[end - 1], set))
+		end--;
+	return (end);
 }
 
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trimmed;
+	size_t	start;
+	size_t	end;
+	size_t	len;
+	size_t	i;
+
+	if (!s1 || !set)
+		return (NULL);
+	start = get_start(s1, set);
+	end = get_end(s1, set, start);
+	len = end - start;
+	trimmed = malloc(sizeof(char) * (len + 1));
+	if (!trimmed)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		trimmed[i] = s1[start + i];
+		i++;
+	}
+	trimmed[i] = '\0';
+	return (trimmed);
+}
