@@ -19,7 +19,7 @@ static size_t	get_start(const char *s1, const char *set)
 	size_t	start;
 
 	start = 0;
-    while (s1[start] && to_set(s1[start], set))
+	while (s1[start] && to_set(s1[start], set))
 		start++;
 	return (start);
 }
@@ -36,11 +36,11 @@ static size_t	get_end(const char *s1, const char *set, size_t start)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trimmed;
-	size_t	start;
-	size_t	end;
-	size_t	len;
-	size_t	i;
+	char *trimmed;
+	size_t start;
+	size_t end;
+	size_t len;
+	size_t i;
 
 	if (!s1 || !set)
 		return (NULL);
