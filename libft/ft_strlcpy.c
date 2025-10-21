@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 19:48:00 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/08 10:33:32 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:32:21 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,9 +14,9 @@
 
 int	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t srclen;
-	
+	size_t	i;
+	size_t	srclen;
+
 	if (!dst || !src)
 		return (0);
 	srclen = ft_strlen(src);

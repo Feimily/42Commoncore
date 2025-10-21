@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 12:53:05 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/13 16:57:45 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:21:14 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ size_t	ft_strlen(const char *s)
 	ft_strlen(NULL);
 	strlen(NULL);
 }*/
-

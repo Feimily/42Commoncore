@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 11:45:48 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/19 16:56:14 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/10/21 01:09:44 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/10/21 01:10:58 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*cpy;
-	size_t	pt;
-	size_t	i;
-
-	cpy = (char *)s;
-	pt = 0;
-	i = 0;
-	if (cpy[i] == c)
-		pt = i;
-	i++;
-	while (cpy[i - 1])
-	{
-		if (cpy[i] == c)
-			pt = i;
-		i++;
-	}
-	return (&cpy[pt]);
+	write(fd, &c, 1);
 }

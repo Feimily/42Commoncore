@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/18 18:03:50 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/10/19 22:07:20 by vaguayo-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 static unsigned int	ft_word_count(char const *s, char c)
 {
 	size_t	i;
@@ -17,42 +31,50 @@ static unsigned int	ft_word_count(char const *s, char c)
 	return (count);
 }
 
-static char	**free_split(char **arr)
+static void	*free_split(char **arr)
 {
-	char	**tmp;
+	int	i;
 
-	tmp = arr;
-	while (*tmp)
-		free(*tmp++);
+	i = 0;
+	while (arr && arr[i])
+		free(arr[i++]);
 	free(arr);
 	return (NULL);
 }
 
+static char	*get_word(const char *s, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (ft_substr(s, 0, len));
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char **matrix;
-	size_t i;
-	size_t start;
-	size_t j;
+	char	**arr;
+	int		i;
+
 	if (!s)
 		return (NULL);
-	matrix = malloc((ft_word_count(s, c) + 1) * sizeof(char *));
-	if (!matrix)
+	arr = malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
+	if (!arr)
 		return (NULL);
-	j = 0;
 	i = 0;
-	start = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c && s[i])
-			start = (unsigned int)i;
-		while (s[i] != c && s[i])
-			i++;
-		matrix[j] ft_substr(s, start, i - start);
-		if (*matrix[j] == NULL)
-			free_split() j++;
+		while (*s && *s == c)
+			s++;
+		if (!*s)
+			break ;
+		arr[i] = get_word(s, c);
+		if (!arr[i++])
+			return (free_split(arr));
+		while (*s && *s != c)
+			s++;
 	}
-	return (matrix);
+	arr[i] = NULL;
+	return (arr);
 }
