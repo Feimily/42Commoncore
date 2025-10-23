@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 11:19:57 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/22 17:15:03 by vaguayo-         ###   ########.fr       */
+/*   Created: 2025/10/22 11:59:17 by vaguayo-          #+#    #+#             */
+/*   Updated: 2025/10/23 11:30:32 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t			i;
-	unsigned char	uc;
-	char			*cpy;
+	t_list	*new_list;
+	t_list	*new_node;
+	t_list	*current;
 
-	cpy = (char *)s;
-	uc = (unsigned char)c;
-	i = 0;
-	while (cpy[i])
+	if (!lst || !f || !del)
+		return (NULL);
+	new_list = NULL;
+	current = lst;
+	while (current)
 	{
-		if ((unsigned char)cpy[i] == uc)
-			return (&cpy[i]);
-		i++;
+		new_node = ft_lstnew(f(current->content));
+		ft_lstadd_back(&new_list, new_node);
+		if (!new_node)
+			return (ft_lstclear(&new_list, del), NULL);
+		current = current->next;
 	}
-	if (uc == '\0')
-		return (&cpy[i]);
-	return (NULL);
+	return (new_list);
 }

@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:18:01 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/21 00:52:14 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:56:41 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	ptr = ft_convert_itoa(str, n);
-	ptr[len] = '\0';
+	*ptr = '\0';
 	return (str);
 }
 

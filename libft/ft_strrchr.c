@@ -6,29 +6,24 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 11:45:48 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/19 16:56:14 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:43:27 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*cpy;
-	size_t	pt;
-	size_t	i;
+	char	*last;
 
-	cpy = (char *)s;
-	pt = 0;
-	i = 0;
-	if (cpy[i] == c)
-		pt = i;
-	i++;
-	while (cpy[i - 1])
+	last = NULL;
+	while (*s)
 	{
-		if (cpy[i] == c)
-			pt = i;
-		i++;
+		if (*s == (char)c)
+			last = (char *)s;
+		s++;
 	}
-	return (&cpy[pt]);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (last);
 }

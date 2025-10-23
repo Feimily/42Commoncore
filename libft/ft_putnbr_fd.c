@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 01:22:16 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/21 02:09:45 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:44:44 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nb < 0)
 	{
-		write(fd, '-', 1);
+		c = '-';
+		write(fd, &c, 1);
 		nb = -nb;
 	}
 	if (nb > 9)

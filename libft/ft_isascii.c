@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:45:41 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/09/30 12:42:56 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:29:14 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	ft_isascii(int c)
 {
-	return (!(c & 0x80));
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

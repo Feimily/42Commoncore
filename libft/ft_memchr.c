@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 12:30:48 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/19 16:20:48 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:58:55 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -16,8 +17,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char	*csrc;
 	size_t				i;
 
-	if (!s)
-		return (NULL);
 	csrc = (const unsigned char *)s;
 	i = 0;
 	while (i < n)

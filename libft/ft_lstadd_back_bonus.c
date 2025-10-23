@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 12:44:34 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/21 12:50:06 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:25:33 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	last = *lst;
-	while (last->next)
-		last = last->next;
+	last = ft_lstlast(*lst);
 	last->next = new;
 }

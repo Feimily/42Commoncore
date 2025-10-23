@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 11:55:33 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/21 12:25:54 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:23:37 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,16 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
+/*
+int main()
+{
+	t_list *n;
+
+	n = ft_lstnew(ft_strdup("pepe"));
+	if (!n)
+		return 1;
+	printf("Nodo creado con contenido: %s\n", (char *)n->content);
+	free(n->content);
+	free(n);
+	return 0;
+}*/

@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaguayo- <vaguayo-@student.42barcelon      +#+  +:+       +#+        */
+/*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 19:48:00 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/19 16:32:21 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:31:29 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
 
 int	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	srclen;
 
-	if (!dst || !src)
-		return (0);
 	srclen = ft_strlen(src);
 	if (size == 0)
 		return (srclen);
@@ -29,7 +27,7 @@ int	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i] = '\0';
-	return (size);
+	return (srclen);
 }
 /*int	main ()
 {

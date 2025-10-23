@@ -6,7 +6,7 @@
 /*   By: vaguayo- <vaguayo-@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 18:18:41 by vaguayo-          #+#    #+#             */
-/*   Updated: 2025/10/19 16:12:51 by vaguayo-         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:00:55 by vaguayo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	j = 0;
-	while (s2[i])
+	while (s2[j])
 	{
 		joined[i] = s2[j++];
 		i++;
